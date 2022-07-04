@@ -18,7 +18,7 @@ namespace Storage.Controllers
         public async Task<IActionResult> Index()
         {
             return _context.Product != null ?
-                        View(await GetProductItemsAsync().ConfigureAwait(false)) :
+                        View(await _context.Product.ToListAsync()) :
                         Problem("Entity set 'StorageContext.Product'  is null.");
         }
 
