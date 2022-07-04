@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Storage.Models.ProductViewModel>
+
+<h1 class="display-6 text-info">Product - Store values</h1>
+
+
+@*Model.Select(i=> new {i.Price, i.Count}).*@
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <p>Sum of all products berfore VAT: @Model.Select(j => j.InventoryValue).Sum() sek</p>
+    </div>
+
+    <div class="col-md-12">
+        <p>Sum of all products included VAT: @Model.Select(j => j.InventoryTotal).Sum() sek</p>
+    </div>
+
+
+</div>
+
+
