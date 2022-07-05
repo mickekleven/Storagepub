@@ -171,6 +171,17 @@ namespace Storage.Controllers
 
 
 
+        [HttpPost]
+        public async Task<IActionResult> FindByOptionAjax(string findOption)
+        {
+
+            var entities = await GetProductItemsAsync(findOption)!.ConfigureAwait(false);
+
+            return View(nameof(ProductList), entities);
+        }
+
+
+
         /// <summary>
         /// Gets products from database within view model collection
         /// </summary>
