@@ -176,7 +176,7 @@ namespace Storage.Controllers
         {
 
             var entities = await GetProductItemsAsync(findOption)!.ConfigureAwait(false);
-            return PartialView(nameof(ProductList), entities);
+            return PartialView("_ProductList", entities);
         }
 
 
