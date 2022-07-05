@@ -38,12 +38,10 @@ $(document).ready(function () {
 const fetchProductList = function () {
 
     let request = document.querySelector('#prodlist');
-    alert(request.value);
-
 
     fetch('Products/FindByOptionAjax?findoption=' + request.value , {
         method: 'GET',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'Content-Type': 'application/json' },
 
     }).then(res => {
         return JSON.stringify(res.json);
