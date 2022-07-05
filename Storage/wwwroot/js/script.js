@@ -44,8 +44,7 @@ const fetchProductList = function () {
     fetch('Products/FindByOptionAjax?findoption=' + request.value , {
         method: 'GET',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        data: { findOption: request.value }
-        /*body: { findOption: "Some text here" }*/
+
     }).then(res => {
         return JSON.stringify(res.json);
     }).catch(_err => console.log(_err));
