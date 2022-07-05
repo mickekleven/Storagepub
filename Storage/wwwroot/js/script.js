@@ -1,23 +1,29 @@
 ﻿
 
-const btnFetch = document.querySelector('#btnfetch'); 
+const btnFetch = document.querySelector('#btnfetch');
 
 btnFetch.addEventListener('click', function () {
     fetchProductList();
 });
-    
+
 
 const fetchProductList = function () {
 
     let request = document.querySelector('#prodlist');
 
-    fetch('Products/FindByOptionAjax?findoption=' + request.value , {
+    let options = {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' }
+    };
 
-    }).then(res => {
+
+    fetch('Products/FindByOptionJsFetch?findoption=' + request.value, options).then(res => {
+        console.log('res ' + res.json);
         return JSON.stringify(res.json);
-    }).catch(_err => console.log(_err));
+    }).then(data => {
+        console.log('data ' + data);
+    })
+        .catch(_err => console.log(_err));
 };
 
 

@@ -172,11 +172,11 @@ namespace Storage.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> FindByOptionAjax(string findOption)
+        public async Task<IActionResult> FindByOptionJsFetch(string findOption)
         {
 
             var entities = await GetProductItemsAsync(findOption)!.ConfigureAwait(false);
-            return PartialView("_ProductList", entities);
+            return Json(entities);
         }
 
 

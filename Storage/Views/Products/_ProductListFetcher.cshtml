@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProductViewModel>
+
+
+<div>
+
+    @foreach (var item in Model)
+    {
+        <h1>@item.Category @item.Name</h1>
+    }
+
+</div>
+
