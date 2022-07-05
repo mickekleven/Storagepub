@@ -174,7 +174,6 @@ namespace Storage.Controllers
         [HttpGet]
         public async Task<IActionResult> FindByOptionJsFetch(string findOption)
         {
-
             var entities = await GetProductItemsAsync(findOption)!.ConfigureAwait(false);
             return Json(entities);
         }
