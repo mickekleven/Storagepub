@@ -13,6 +13,9 @@
             contentType: "text",
             dataType: "json",
             success: function (result) {
+                //return result;
+                //$('#prodlistresult').empty();
+                $('#prodlistresult').html(result);
                 console.log(result);
             }
         });
