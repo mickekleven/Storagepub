@@ -8,7 +8,13 @@
 
 <partial name="_Productlist"></partial>
 
+
 <partial name="_ProductFinder"></partial>
+
+<partial name="_ProductFinderAjax"></partial>
 
 <partial name="_ProductResult"></partial>
 
+    @section Scripts {
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

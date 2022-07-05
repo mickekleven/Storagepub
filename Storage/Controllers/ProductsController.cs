@@ -171,13 +171,12 @@ namespace Storage.Controllers
 
 
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> FindByOptionAjax(string findOption)
         {
 
             var entities = await GetProductItemsAsync(findOption)!.ConfigureAwait(false);
-
-            return View(nameof(ProductList), entities);
+            return PartialView("_ProductList", entities);
         }
 
 

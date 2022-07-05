@@ -1,15 +1,15 @@
 ﻿$(document).ready(function () {
 
-    $('#inpbtn').click(function () {
+    $('#btnprodlist').click(function () {
 
-        let qs = $('#mkinp').val();
+        let qs = $('#inpprodlist').val();
 
         if (qs === null || qs === undefined) { alert('Input is null'); }
 
         $.ajax({
             type: 'GET',
-            url: '/Products/AjaxTest',
-            data: { inpArg: qs },
+            url: '/Products/FindByOptionAjax',
+            data: { findOption: qs },
             contentType: "text",
             dataType: "json",
             success: function (result) {
