@@ -45,10 +45,10 @@ const fetchProductList = function () {
         method: 'GET',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         data: { findOption: request.value }
-        /*        body: { findOption: "Some text here" }*/
+        /*body: { findOption: "Some text here" }*/
     }).then(res => {
         return JSON.stringify(res.json);
-    }).then(_res => console.log(_res));
+    }).catch(_err => console.log(_err));
 };
 
 
