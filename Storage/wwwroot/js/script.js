@@ -18,6 +18,11 @@ const fetchProductList = function () {
 
 
     fetch('Products/FindByOptionJsFetch?findoption=' + request.value, options).then(res => {
+
+        if (!res.ok) {
+            throw new Error("Network response was not ok"); 
+        }
+
         console.log('res ' + res.json);
         return JSON.stringify(res.json);
     }).then(data => {
