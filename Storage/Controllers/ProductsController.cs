@@ -171,7 +171,7 @@ namespace Storage.Controllers
 
 
 
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> FindByOptionAjax(string findOption)
         {
 

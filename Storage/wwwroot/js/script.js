@@ -1,4 +1,15 @@
-﻿$(document).ready(function () {
+﻿
+
+const btnFetch = document.querySelector('#btnfetch'); 
+
+btnFetch.addEventListener('click', function () {
+    fetchProductList();
+});
+    
+
+
+
+$(document).ready(function () {
 
     $('#btnprodlist').click(function () {
 
@@ -21,3 +32,20 @@
         });
     });
 });
+
+
+
+const fetchProductList = function () {
+
+    let request = document.querySelector('#prodlist');
+    alert(request);
+
+
+    fetch('Products/FindByOptionAjax', {
+        method: 'post',
+        headers: { 'Content-Type': 'text' },
+        body: { findOption: "Some text here" }
+    }).then(res => res.json);
+};
+
+
