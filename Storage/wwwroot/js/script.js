@@ -38,14 +38,17 @@ $(document).ready(function () {
 const fetchProductList = function () {
 
     let request = document.querySelector('#prodlist');
-    alert(request);
+    alert(request.value);
 
 
-    fetch('Products/FindByOptionAjax', {
-        method: 'post',
-        headers: { 'Content-Type': 'text' },
-        body: { findOption: "Some text here" }
-    }).then(res => res.json);
+    fetch('Products/FindByOptionAjax?findoption=' + request.value , {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        data: { findOption: request.value }
+        /*        body: { findOption: "Some text here" }*/
+    }).then(res => {
+        return JSON.stringify(res.json);
+    }).then(_res => console.log(_res));
 };
 
 
