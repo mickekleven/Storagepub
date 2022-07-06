@@ -39,6 +39,8 @@ const fetchData = function () {
 
                 data.forEach(i => addItemToDom(i));
 
+                element.value = "";
+
 
             })
 
