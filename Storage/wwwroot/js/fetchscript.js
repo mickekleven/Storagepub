@@ -19,7 +19,7 @@ const fetchData = function () {
 
     let element = document.querySelector('#prodlist');
 
-    let url = 'StudentA/FetchData?fetchInp=' + element.value;
+    let url = 'Products/FindByOptionJsFetch?findOption=' + element.value;
 
     try {
         const response = fetch(url, getOptions)
@@ -59,15 +59,31 @@ const addItemToDom = function (_item) {
 
     items.insertAdjacentHTML('beforeend', `<tr>
             <th>${_item.name}</th>
-            <th>${_item.age}</th>
-            <th>${_item.studProgram}</th>
+            <th>${_item.price}</th>
+            <th>${_item.count}</th>
+            <th>${_item.inventoryValue}</th>
+            <th>${_item.inventoryTotal}</th>
+            <th>${_item.orderDate}</th>
+            <th>${_item.category}</th>
+            <th>${_item.shelf}</th>
+            <th>${_item.vat}</th>
+            <th>${_item.totalPrice}</th>
         </tr>`);
 }
 
 class Item {
-    constructor(name, age, studProgram) {
+    constructor(id, name, price, count, inventoryValue, inventoryTotal, orderDate, category, shelf, vat, totalPrice  ) {
+        this.id = id;
         this.name = name;
-        this.age = age;
-        this.studProgram = studProgram;
+        this.price = price;
+        this.count = count;
+        this.inventoryValue = inventoryValue;
+        this.inventoryTotal = inventoryTotal;
+        this.orderDate = orderDate;
+        this.category = category;
+        this.shelf = shelf;
+        this.vat = vat;
+        this.totalPrice = totalPrice;
     }
 }
+
