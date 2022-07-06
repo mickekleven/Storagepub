@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-4 mt-4">
         <label class="mb-2 text-info">Find by Category, Name and Shelf</label>
-        <form asp-action="FindByOption" asp-controller="Products" method="get">
+        <form asp-action="FindByOption" asp-controller="Products" method="get" id="form01">
             <div class="input-group mb-4">
                 <input type="text" name="findOption" class="form-control" placeholder="Search product" />
                 <div class="input-group-append">
@@ -12,3 +12,12 @@
        </form>
     </div>
 </div>
+
+
+
+<script>
+
+function clearForm() {
+    document.querySelector('#form01').reset();
+}
+</script>
